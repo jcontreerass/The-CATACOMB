@@ -1,0 +1,102 @@
+[gd_scene load_steps=7 format=3 uid="uid://d057fq8femhxp"]
+
+[ext_resource type="Script" path="res://options_menu.gd" id="1_4ac8v"]
+[ext_resource type="Texture2D" uid="uid://bi1qnnmpjxy1p" path="res://images/Dirt_01.png" id="2_74riw"]
+[ext_resource type="Theme" uid="uid://chs40oebbe8ed" path="res://fonts/font_theme.tres" id="3_v3ywj"]
+[ext_resource type="FontFile" uid="uid://do7xr3jv0ldym" path="res://fonts/RandomFont3.ttf" id="4_bvnhm"]
+[ext_resource type="Theme" uid="uid://cp0c0m5ifst5q" path="res://BUTTON.tres" id="6_2heno"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_wraa8"]
+font = ExtResource("4_bvnhm")
+font_size = 50
+font_color = Color(0.160869, 0.0616329, 1.8049e-08, 1)
+outline_size = 2
+outline_color = Color(0.160784, 0.0627451, 0, 1)
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4ac8v")
+
+[node name="Dirt01" type="Sprite2D" parent="."]
+show_behind_parent = true
+position = Vector2(326.938, 323.5)
+scale = Vector2(1.2771, 1.274)
+texture = ExtResource("2_74riw")
+
+[node name="Dirt02" type="Sprite2D" parent="."]
+show_behind_parent = true
+position = Vector2(977, 326)
+scale = Vector2(1.271, 1.271)
+texture = ExtResource("2_74riw")
+
+[node name="Label_title" type="Label" parent="."]
+layout_mode = 0
+offset_left = 403.0
+offset_top = 165.0
+offset_right = 747.0
+offset_bottom = 216.0
+theme = ExtResource("3_v3ywj")
+text = "OPTIONS"
+label_settings = SubResource("LabelSettings_wraa8")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button_volume" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -124.0
+offset_top = -68.0
+offset_right = 126.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("6_2heno")
+text = "VOLUME"
+
+[node name="Button_tutorial" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -124.0
+offset_top = 50.0
+offset_right = 126.0
+offset_bottom = 110.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("6_2heno")
+text = "TUTORIAL"
+
+[node name="Button_back" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -124.0
+offset_top = 168.0
+offset_right = 126.0
+offset_bottom = 228.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("6_2heno")
+text = "BACK"
+
+[connection signal="pressed" from="Button_volume" to="." method="_on_button_volume_pressed"]
+[connection signal="pressed" from="Button_volume" to="." method="_on_button_play_pressed"]
+[connection signal="pressed" from="Button_tutorial" to="." method="_on_button_tutorial_pressed"]
+[connection signal="pressed" from="Button_tutorial" to="." method="_on_button_options_pressed"]
+[connection signal="pressed" from="Button_back" to="." method="_on_button_exit_pressed"]
+[connection signal="pressed" from="Button_back" to="." method="_on_button_back_pressed"]

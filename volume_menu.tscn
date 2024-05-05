@@ -1,0 +1,118 @@
+[gd_scene load_steps=11 format=3 uid="uid://dlsds6fdl5vks"]
+
+[ext_resource type="Script" path="res://options_menu.gd" id="1_66fvw"]
+[ext_resource type="Texture2D" uid="uid://bi1qnnmpjxy1p" path="res://images/Dirt_01.png" id="2_msmu4"]
+[ext_resource type="Theme" uid="uid://chs40oebbe8ed" path="res://fonts/font_theme.tres" id="3_nb0pf"]
+[ext_resource type="FontFile" uid="uid://do7xr3jv0ldym" path="res://fonts/RandomFont3.ttf" id="4_h50q6"]
+[ext_resource type="Theme" uid="uid://cp0c0m5ifst5q" path="res://BUTTON.tres" id="5_6nrwr"]
+[ext_resource type="Theme" uid="uid://wqukhsjj75gb" path="res://volume_theme.tres" id="6_7mwia"]
+[ext_resource type="Script" path="res://volume_slider.gd" id="7_rbmtx"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_wraa8"]
+font = ExtResource("4_h50q6")
+font_size = 50
+font_color = Color(0.160869, 0.0616329, 1.8049e-08, 1)
+outline_size = 2
+outline_color = Color(0.160784, 0.0627451, 0, 1)
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_fr6fb"]
+blend_mode = 1
+
+[sub_resource type="LabelSettings" id="LabelSettings_owesp"]
+font = ExtResource("4_h50q6")
+font_color = Color(0.293113, 0.134952, 1.20327e-07, 1)
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_66fvw")
+
+[node name="Dirt01" type="Sprite2D" parent="."]
+show_behind_parent = true
+position = Vector2(326.938, 323.5)
+scale = Vector2(1.2771, 1.274)
+texture = ExtResource("2_msmu4")
+
+[node name="Dirt02" type="Sprite2D" parent="."]
+show_behind_parent = true
+position = Vector2(977, 326)
+scale = Vector2(1.271, 1.271)
+texture = ExtResource("2_msmu4")
+
+[node name="Label_title" type="Label" parent="."]
+layout_mode = 0
+offset_left = 403.0
+offset_top = 165.0
+offset_right = 747.0
+offset_bottom = 216.0
+theme = ExtResource("3_nb0pf")
+text = "VOLUME"
+label_settings = SubResource("LabelSettings_wraa8")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button_back" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -124.0
+offset_top = 168.0
+offset_right = 126.0
+offset_bottom = 228.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("5_6nrwr")
+text = "BACK"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+material = SubResource("CanvasItemMaterial_fr6fb")
+layout_mode = 0
+offset_left = 479.0
+offset_top = 259.0
+offset_right = 673.0
+offset_bottom = 390.0
+theme = ExtResource("6_7mwia")
+alignment = 1
+
+[node name="master" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "MASTER VOLUME"
+label_settings = SubResource("LabelSettings_owesp")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="master_volume" type="HSlider" parent="VBoxContainer"]
+layout_mode = 2
+script = ExtResource("7_rbmtx")
+
+[node name="music" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "MUSIC VOLUME"
+label_settings = SubResource("LabelSettings_owesp")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="music_volume" type="HSlider" parent="VBoxContainer"]
+layout_mode = 2
+script = ExtResource("7_rbmtx")
+
+[node name="sfx" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "SFX VOLUME"
+label_settings = SubResource("LabelSettings_owesp")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="sfx_volume" type="HSlider" parent="VBoxContainer"]
+layout_mode = 2
+script = ExtResource("7_rbmtx")
+
+[connection signal="pressed" from="Button_back" to="." method="_on_button_exit_pressed"]
+[connection signal="pressed" from="Button_back" to="." method="_on_button_back_pressed"]
