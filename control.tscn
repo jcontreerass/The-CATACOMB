@@ -1,0 +1,83 @@
+[gd_scene load_steps=7 format=3 uid="uid://c8rt56gvx4jas"]
+
+[ext_resource type="Texture2D" uid="uid://bi1qnnmpjxy1p" path="res://images/Dirt_01.png" id="1_lxj4y"]
+[ext_resource type="Theme" uid="uid://cp0c0m5ifst5q" path="res://BUTTON.tres" id="2_3hrc8"]
+[ext_resource type="Theme" uid="uid://chs40oebbe8ed" path="res://fonts/font_theme.tres" id="3_6j8ym"]
+[ext_resource type="FontFile" uid="uid://do7xr3jv0ldym" path="res://fonts/RandomFont3.ttf" id="4_etwrn"]
+[ext_resource type="Texture2D" uid="uid://dg46lox8kpaya" path="res://images/descarga.png" id="5_uwfv4"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_wraa8"]
+font = ExtResource("4_etwrn")
+font_size = 50
+font_color = Color(0.160869, 0.0616329, 1.8049e-08, 1)
+outline_size = 2
+outline_color = Color(0.160784, 0.0627451, 0, 1)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Dirt01" type="Sprite2D" parent="."]
+show_behind_parent = true
+position = Vector2(326.938, 323.5)
+scale = Vector2(1.2771, 1.274)
+texture = ExtResource("1_lxj4y")
+
+[node name="Dirt02" type="Sprite2D" parent="."]
+show_behind_parent = true
+position = Vector2(977, 326)
+scale = Vector2(1.271, 1.271)
+texture = ExtResource("1_lxj4y")
+
+[node name="Button_play" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -124.0
+offset_top = 34.0
+offset_right = 126.0
+offset_bottom = 94.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_3hrc8")
+text = "PLAY"
+
+[node name="Label_title" type="Label" parent="."]
+offset_left = 403.0
+offset_top = 259.0
+offset_right = 747.0
+offset_bottom = 311.0
+theme = ExtResource("3_6j8ym")
+text = "THE CATACOMB"
+label_settings = SubResource("LabelSettings_wraa8")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="icon" type="Sprite2D" parent="."]
+position = Vector2(575, 149)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_uwfv4")
+flip_h = true
+
+[node name="Button_play2" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -124.0
+offset_top = 109.0
+offset_right = 126.0
+offset_bottom = 169.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_3hrc8")
+text = "MENU"
