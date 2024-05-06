@@ -17,4 +17,4 @@ func _on_button_exit_pressed():
 
 
 func _ready():
-	AudioStream.play($menu_music)
+	$menu_music.play()

@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://dlsds6fdl5vks"]
 
-[ext_resource type="Script" path="res://options_menu.gd" id="1_66fvw"]
+[ext_resource type="Script" path="res://volume_menu.gd" id="1_2dapl"]
 [ext_resource type="Texture2D" uid="uid://bi1qnnmpjxy1p" path="res://images/Dirt_01.png" id="2_msmu4"]
 [ext_resource type="Theme" uid="uid://chs40oebbe8ed" path="res://fonts/font_theme.tres" id="3_nb0pf"]
 [ext_resource type="FontFile" uid="uid://do7xr3jv0ldym" path="res://fonts/RandomFont3.ttf" id="4_h50q6"]
@@ -29,7 +29,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_66fvw")
+script = ExtResource("1_2dapl")
 
 [node name="Dirt01" type="Sprite2D" parent="."]
 show_behind_parent = true
@@ -55,7 +55,7 @@ label_settings = SubResource("LabelSettings_wraa8")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Button_back" type="Button" parent="."]
+[node name="Button_back_2" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -114,5 +114,6 @@ vertical_alignment = 1
 layout_mode = 2
 script = ExtResource("7_rbmtx")
 
-[connection signal="pressed" from="Button_back" to="." method="_on_button_exit_pressed"]
-[connection signal="pressed" from="Button_back" to="." method="_on_button_back_pressed"]
+[connection signal="pressed" from="Button_back_2" to="." method="_on_button_back_pressed"]
+[connection signal="pressed" from="Button_back_2" to="." method="_on_button_exit_pressed"]
+[connection signal="pressed" from="Button_back_2" to="." method="_on_button_back_2_pressed"]
