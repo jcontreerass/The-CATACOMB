@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://dwjpaqxbqpyh4"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_4qxas"]
+specular_color = Color(0, 0, 0, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b8n5w"]
+size = Vector2(1, 1)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_86r18"]
+
+[node name="MAP_1" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0, 1)
+texture = SubResource("CanvasTexture_4qxas")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/StaticBody2D"]
+shape = SubResource("RectangleShape2D_b8n5w")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Sprite2D"]
+occluder = SubResource("OccluderPolygon2D_86r18")
