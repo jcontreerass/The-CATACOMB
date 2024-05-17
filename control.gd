@@ -17,4 +17,4 @@ func _on_button_exit_pressed():
 
 
 func _ready():
-	$menu_music.play()
+	MenuMusic.play_music_level()

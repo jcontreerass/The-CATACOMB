@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://bstffcv3vl6as"]
+[gd_scene load_steps=3 format=3 uid="uid://bstffcv3vl6as"]
 
+[ext_resource type="Script" path="res://scenes/level_2.gd" id="1_rbfgy"]
 [ext_resource type="TileSet" uid="uid://dw46irpaauqyg" path="res://scenes/level_1.tres" id="1_tn0s1"]
 
 [node name="Level_2" type="Node2D"]
+script = ExtResource("1_rbfgy")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource("1_tn0s1")
