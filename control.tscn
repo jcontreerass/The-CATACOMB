@@ -6,7 +6,7 @@
 [ext_resource type="Theme" uid="uid://chs40oebbe8ed" path="res://fonts/font_theme.tres" id="3_6j8ym"]
 [ext_resource type="FontFile" uid="uid://do7xr3jv0ldym" path="res://fonts/RandomFont3.ttf" id="4_etwrn"]
 [ext_resource type="Texture2D" uid="uid://dg46lox8kpaya" path="res://images/descarga.png" id="5_uwfv4"]
-[ext_resource type="AudioStream" uid="uid://bm31ikjmb5ouj" path="res://sounds/menu_music.mp3" id="7_7fbog"]
+[ext_resource type="AudioStream" uid="uid://b1rsiv1c10lkv" path="res://sounds/menu_click.ogg" id="7_hdeng"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_wraa8"]
 font = ExtResource("4_etwrn")
@@ -102,9 +102,8 @@ grow_vertical = 2
 theme = ExtResource("2_3hrc8")
 text = "EXIT"
 
-[node name="menu_music" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("7_7fbog")
-bus = &"music"
+[node name="ButtonSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_hdeng")
 
 [connection signal="pressed" from="Button_play" to="." method="_on_button_play_pressed"]
 [connection signal="pressed" from="Button_options" to="." method="_on_button_options_pressed"]

@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://d057fq8femhxp"]
+[gd_scene load_steps=8 format=3 uid="uid://d057fq8femhxp"]
 
 [ext_resource type="Script" path="res://options_menu.gd" id="1_4ac8v"]
 [ext_resource type="Texture2D" uid="uid://bi1qnnmpjxy1p" path="res://images/Dirt_01.png" id="2_74riw"]
 [ext_resource type="Theme" uid="uid://chs40oebbe8ed" path="res://fonts/font_theme.tres" id="3_v3ywj"]
 [ext_resource type="FontFile" uid="uid://do7xr3jv0ldym" path="res://fonts/RandomFont3.ttf" id="4_bvnhm"]
 [ext_resource type="Theme" uid="uid://cp0c0m5ifst5q" path="res://BUTTON.tres" id="6_2heno"]
+[ext_resource type="AudioStream" uid="uid://b1rsiv1c10lkv" path="res://sounds/menu_click.ogg" id="6_tphcn"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_wraa8"]
 font = ExtResource("4_bvnhm")
@@ -94,9 +95,12 @@ grow_vertical = 2
 theme = ExtResource("6_2heno")
 text = "BACK"
 
+[node name="ButtonSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_tphcn")
+
 [connection signal="pressed" from="Button_volume" to="." method="_on_button_play_pressed"]
 [connection signal="pressed" from="Button_volume" to="." method="_on_button_volume_pressed"]
-[connection signal="pressed" from="Button_tutorial" to="." method="_on_button_options_pressed"]
 [connection signal="pressed" from="Button_tutorial" to="." method="_on_button_tutorial_pressed"]
-[connection signal="pressed" from="Button_back" to="." method="_on_button_back_pressed"]
+[connection signal="pressed" from="Button_tutorial" to="." method="_on_button_options_pressed"]
 [connection signal="pressed" from="Button_back" to="." method="_on_button_exit_pressed"]
+[connection signal="pressed" from="Button_back" to="." method="_on_button_back_pressed"]

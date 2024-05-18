@@ -1,31 +1,32 @@
 extends CharacterBody2D
 
-
-const SPEED = 300.0
-const JUMP_VELOCITY = -400.0
-
-var movespeed = 500
+var speed = 200
 
 
+func _physics_process(_delta):
+	var velocity = Vector2(0, 0)
+	velocity = velocity.normalized()
+	if move_and_slide():
+		velocity.x = 0
+		velocity.y = 0
 
-func _physics_process(delta):
-	var motion = Vector2()
-	
-	if Input.is_action_pressed("up"):
-		motion.y -= 1
-	if Input.is_action_pressed("down"):
-		motion.y += 1
-	if Input.is_action_pressed("right"):
-		motion.x += 1
-	if Input.is_action_pressed("up"):
-		motion.x -= 1
-	
-	motion = motion.normalized()
-	motion = move_and_slide(motion * movespeed)
-	
-	
-	var direction = Input.get_axis("ui_left", "ui_right")
-	if direction:
-		velocity.x = direction * SPEED
-	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
+func _input(_event):
+	var animation = $AnimationPlayer
+	#velocity.x = 0
+	#velocity.y = 0
+	if Input.is_action_just_pressed("right"):
+		animation.play("running_right")
+		velocity.y = 0
+		velocity.x = 1 * speed
+	if Input.is_action_just_pressed("left"):
+		animation.play("running_left")
+		velocity.y = 0
+		velocity.x = -1 * speed
+	if Input.is_action_just_pressed("down"):
+		animation.play("running")
+		velocity.x = 0
+		velocity.y = 1 * speed
+	if Input.is_action_just_pressed("up"):
+		animation.play("running_up")
+		velocity.x = 0
+		velocity.y = -1 * speed

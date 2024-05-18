@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dlsds6fdl5vks"]
+[gd_scene load_steps=12 format=3 uid="uid://dlsds6fdl5vks"]
 
 [ext_resource type="Script" path="res://volume_menu.gd" id="1_2dapl"]
 [ext_resource type="Texture2D" uid="uid://bi1qnnmpjxy1p" path="res://images/Dirt_01.png" id="2_msmu4"]
@@ -7,6 +7,7 @@
 [ext_resource type="Theme" uid="uid://cp0c0m5ifst5q" path="res://BUTTON.tres" id="5_6nrwr"]
 [ext_resource type="Theme" uid="uid://wqukhsjj75gb" path="res://volume_theme.tres" id="6_7mwia"]
 [ext_resource type="Script" path="res://volume_slider.gd" id="7_rbmtx"]
+[ext_resource type="AudioStream" uid="uid://b1rsiv1c10lkv" path="res://sounds/menu_click.ogg" id="8_2cv02"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_wraa8"]
 font = ExtResource("4_h50q6")
@@ -114,6 +115,9 @@ vertical_alignment = 1
 layout_mode = 2
 script = ExtResource("7_rbmtx")
 
-[connection signal="pressed" from="Button_back_2" to="." method="_on_button_back_pressed"]
-[connection signal="pressed" from="Button_back_2" to="." method="_on_button_exit_pressed"]
+[node name="ButtonSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_2cv02")
+
 [connection signal="pressed" from="Button_back_2" to="." method="_on_button_back_2_pressed"]
+[connection signal="pressed" from="Button_back_2" to="." method="_on_button_exit_pressed"]
+[connection signal="pressed" from="Button_back_2" to="." method="_on_button_back_pressed"]
