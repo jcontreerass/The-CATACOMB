@@ -1,6 +1,7 @@
 extends Area2D
 
 
-func _on_body_entered(body):
-	if body.name == "Player":
+func _on_body_entered(_body):
+	$sonido_moneda.play()
+	if _body.name == "Player":
 		queue_free()

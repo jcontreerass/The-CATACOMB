@@ -4,11 +4,10 @@
 [ext_resource type="Script" path="res://scenes/player.gd" id="1_taw5b"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bmbp6"]
-radius = 9.0
+radius = 12.5
 height = 31.0
 
 [sub_resource type="Animation" id="Animation_rfdra"]
-length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -119,7 +118,6 @@ _data = {
 [node name="Player" type="CharacterBody2D"]
 scale = Vector2(0.8, 0.8)
 script = ExtResource("1_taw5b")
-metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_gws2g")

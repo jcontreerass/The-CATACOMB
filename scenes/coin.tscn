@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://s4ot6n71ocu8"]
+[gd_scene load_steps=13 format=3 uid="uid://s4ot6n71ocu8"]
 
 [ext_resource type="Script" path="res://scenes/coin.gd" id="1_dj41i"]
 [ext_resource type="Texture2D" uid="uid://doerfrpp2r1ha" path="res://images/coin_01.png" id="1_r01et"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://cxsqkiw1bjvx8" path="res://images/coin_06.png" id="6_j145s"]
 [ext_resource type="Texture2D" uid="uid://ctx8ir1mjmssm" path="res://images/coin_07.png" id="7_1my81"]
 [ext_resource type="Texture2D" uid="uid://c2adpu671mc04" path="res://images/coin_08.png" id="8_yy0v5"]
+[ext_resource type="AudioStream" uid="uid://br10tud0o0jcb" path="res://sounds/mario_moneda.mp3" id="10_5c3w6"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_f0lnf"]
 animations = [{
@@ -57,5 +58,8 @@ frame_progress = 0.757614
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_6tmik")
+
+[node name="sonido_moneda" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_5c3w6")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
