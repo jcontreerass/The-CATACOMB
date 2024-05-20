@@ -1,9 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://cam2un31e57xv"]
+[gd_scene load_steps=7 format=3 uid="uid://cam2un31e57xv"]
 
 [ext_resource type="TileSet" uid="uid://b8ircehct203r" path="res://scenes/level_1_newTile.tres" id="1_7pxtf"]
 [ext_resource type="Script" path="res://scenes/level_1.gd" id="1_sm8em"]
 [ext_resource type="PackedScene" uid="uid://cfdevp8xk0u5x" path="res://scenes/player.tscn" id="3_nkqv2"]
 [ext_resource type="PackedScene" uid="uid://s4ot6n71ocu8" path="res://scenes/coin.tscn" id="4_a6dcs"]
+[ext_resource type="AudioStream" uid="uid://br10tud0o0jcb" path="res://sounds/mario_moneda.mp3" id="6_06y7x"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pdxnr"]
+size = Vector2(59, 104)
 
 [node name="LEVEL_1" type="Node2D"]
 script = ExtResource("1_sm8em")
@@ -45,3 +49,21 @@ position = Vector2(425, 598)
 
 [node name="Coin5" parent="." instance=ExtResource("4_a6dcs")]
 position = Vector2(936, 377)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(285, 64)
+stream = ExtResource("6_06y7x")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(284, 66)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-1.5, -3)
+shape = SubResource("RectangleShape2D_pdxnr")
+
+[connection signal="body_entered" from="Coin" to="." method="_on_coin_body_entered"]
+[connection signal="body_entered" from="Coin2" to="." method="_on_coin_2_body_entered"]
+[connection signal="body_entered" from="Coin3" to="." method="_on_coin_3_body_entered"]
+[connection signal="body_entered" from="Coin4" to="." method="_on_coin_4_body_entered"]
+[connection signal="body_entered" from="Coin5" to="." method="_on_coin_5_body_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

@@ -1,0 +1,96 @@
+[gd_scene load_steps=8 format=3 uid="uid://bgafg65c5s44d"]
+
+[ext_resource type="Script" path="res://scenes/video_menu.gd" id="1_afmhs"]
+[ext_resource type="Texture2D" uid="uid://bi1qnnmpjxy1p" path="res://images/Dirt_01.png" id="2_i6ib5"]
+[ext_resource type="FontFile" uid="uid://do7xr3jv0ldym" path="res://fonts/RandomFont3.ttf" id="3_g657y"]
+[ext_resource type="Texture2D" uid="uid://c53yjclhosuc7" path="res://images/Captura de pantalla 2024-05-20 221001.1.png" id="4_ew15a"]
+[ext_resource type="Theme" uid="uid://cp0c0m5ifst5q" path="res://BUTTON.tres" id="5_hxdrj"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ui43e"]
+font = ExtResource("3_g657y")
+font_size = 50
+font_color = Color(0.160784, 0.0627451, 0, 1)
+outline_size = 2
+outline_color = Color(0.160784, 0.0627451, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_eimgs"]
+font = ExtResource("3_g657y")
+font_size = 20
+font_color = Color(0.160784, 0.0627451, 0, 1)
+outline_size = 2
+outline_color = Color(0.160784, 0.0627451, 0, 1)
+
+[node name="VideoMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_afmhs")
+
+[node name="Dirt01" type="Sprite2D" parent="."]
+show_behind_parent = true
+position = Vector2(326.938, 323.5)
+scale = Vector2(1.2771, 1.274)
+texture = ExtResource("2_i6ib5")
+
+[node name="Dirt02" type="Sprite2D" parent="."]
+show_behind_parent = true
+position = Vector2(977, 326)
+scale = Vector2(1.271, 1.271)
+texture = ExtResource("2_i6ib5")
+
+[node name="tutorial_label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -215.0
+offset_right = 215.0
+offset_bottom = -489.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "TUTORIAL"
+label_settings = SubResource("LabelSettings_ui43e")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button_SIGUIENTE" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -122.0
+offset_top = 232.0
+offset_right = 128.0
+offset_bottom = 292.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("5_hxdrj")
+text = "SIGUIENTE"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 352.0
+offset_top = 500.0
+offset_right = 801.0
+offset_bottom = 523.0
+text = "Usa las flechas/\"wasd\"/mando para moverte"
+label_settings = SubResource("LabelSettings_eimgs")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 258.0
+offset_top = 127.0
+offset_right = 904.0
+offset_bottom = 474.0
+texture = ExtResource("4_ew15a")
+expand_mode = 1
+
+[connection signal="pressed" from="Button_SIGUIENTE" to="." method="_on_button_siguiente_pressed"]
