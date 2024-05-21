@@ -11,7 +11,7 @@
 [sub_resource type="LabelSettings" id="LabelSettings_wraa8"]
 font = ExtResource("4_etwrn")
 font_size = 50
-font_color = Color(0.160869, 0.0616329, 1.8049e-08, 1)
+font_color = Color(0.160784, 0.0627451, 0, 1)
 outline_size = 2
 outline_color = Color(0.160784, 0.0627451, 0, 1)
 

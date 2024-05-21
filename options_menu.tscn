@@ -100,8 +100,8 @@ stream = ExtResource("6_tphcn")
 
 [connection signal="pressed" from="Button_volume" to="." method="_on_button_play_pressed"]
 [connection signal="pressed" from="Button_volume" to="." method="_on_button_volume_pressed"]
-[connection signal="pressed" from="Button_video" to="." method="_on_button_tutorial_pressed"]
-[connection signal="pressed" from="Button_video" to="." method="_on_button_video_pressed"]
 [connection signal="pressed" from="Button_video" to="." method="_on_button_options_pressed"]
+[connection signal="pressed" from="Button_video" to="." method="_on_button_video_pressed"]
+[connection signal="pressed" from="Button_video" to="." method="_on_button_tutorial_pressed"]
 [connection signal="pressed" from="Button_back" to="." method="_on_button_exit_pressed"]
 [connection signal="pressed" from="Button_back" to="." method="_on_button_back_pressed"]
