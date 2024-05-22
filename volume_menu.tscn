@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dlsds6fdl5vks"]
+[gd_scene load_steps=10 format=3 uid="uid://dlsds6fdl5vks"]
 
 [ext_resource type="Script" path="res://volume_menu.gd" id="1_2dapl"]
 [ext_resource type="Texture2D" uid="uid://bi1qnnmpjxy1p" path="res://images/Dirt_01.png" id="2_msmu4"]
@@ -6,8 +6,6 @@
 [ext_resource type="FontFile" uid="uid://do7xr3jv0ldym" path="res://fonts/RandomFont3.ttf" id="4_h50q6"]
 [ext_resource type="Theme" uid="uid://cp0c0m5ifst5q" path="res://BUTTON.tres" id="5_6nrwr"]
 [ext_resource type="Theme" uid="uid://wqukhsjj75gb" path="res://volume_theme.tres" id="6_7mwia"]
-[ext_resource type="Script" path="res://volume_slider.gd" id="7_rbmtx"]
-[ext_resource type="AudioStream" uid="uid://b1rsiv1c10lkv" path="res://sounds/menu_click.ogg" id="8_2cv02"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_wraa8"]
 font = ExtResource("4_h50q6")
@@ -91,7 +89,8 @@ vertical_alignment = 1
 
 [node name="master_volume" type="HSlider" parent="VBoxContainer"]
 layout_mode = 2
-script = ExtResource("7_rbmtx")
+min_value = -100.0
+max_value = 0.0
 
 [node name="music" type="Label" parent="VBoxContainer"]
 layout_mode = 2
@@ -102,7 +101,8 @@ vertical_alignment = 1
 
 [node name="music_volume" type="HSlider" parent="VBoxContainer"]
 layout_mode = 2
-script = ExtResource("7_rbmtx")
+min_value = -100.0
+max_value = 0.0
 
 [node name="sfx" type="Label" parent="VBoxContainer"]
 layout_mode = 2
@@ -113,12 +113,13 @@ vertical_alignment = 1
 
 [node name="sfx_volume" type="HSlider" parent="VBoxContainer"]
 layout_mode = 2
-script = ExtResource("7_rbmtx")
-
-[node name="ButtonSound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("8_2cv02")
+min_value = -100.0
+max_value = 0.0
 
 [connection signal="pressed" from="Button_back_2" to="." method="_on_button_exit_pressed"]
-[connection signal="pressed" from="Button_back_2" to="." method="_on_button_back_2_pressed"]
 [connection signal="pressed" from="Button_back_2" to="." method="_on_button_back_pressed"]
+[connection signal="pressed" from="Button_back_2" to="." method="_on_button_back_2_pressed"]
 [connection signal="changed" from="VBoxContainer/master_volume" to="." method="_on_master_volume_changed"]
+[connection signal="value_changed" from="VBoxContainer/master_volume" to="." method="_on_master_volume_value_changed"]
+[connection signal="value_changed" from="VBoxContainer/music_volume" to="." method="_on_music_volume_value_changed"]
+[connection signal="value_changed" from="VBoxContainer/sfx_volume" to="." method="_on_sfx_volume_value_changed"]

@@ -12,3 +12,9 @@ func _play_music(music: AudioStream, volume = 0.0):
 
 func play_music_level():
 	_play_music(level_music)
+
+func play_button_sound():
+	$AudioStreamPlayer2D.play()
+
+func play_death_sound():
+	$AudioStreamPlayer2D2.play()

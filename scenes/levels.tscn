@@ -95,4 +95,5 @@ theme = ExtResource("5_4ly78")
 text = "BACK"
 
 [connection signal="pressed" from="Button_level1" to="." method="_on_button_level_1_pressed"]
+[connection signal="pressed" from="Button_level2" to="." method="_on_button_level_2_pressed"]
 [connection signal="pressed" from="Button_back_3" to="." method="_on_button_back_3_pressed"]

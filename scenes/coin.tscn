@@ -59,5 +59,6 @@ shape = SubResource("CircleShape2D_6tmik")
 
 [node name="sonido_moneda" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("10_5c3w6")
+bus = &"effects"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

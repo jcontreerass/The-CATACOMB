@@ -64,4 +64,4 @@ left={
 
 [rendering]
 
-environment/defaults/default_clear_color=Color(0, 0, 0, 1)
+environment/defaults/default_clear_color=Color(0.0784314, 0.0470588, 0.109804, 1)

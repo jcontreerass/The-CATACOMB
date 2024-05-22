@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://c8rt56gvx4jas"]
+[gd_scene load_steps=8 format=3 uid="uid://c8rt56gvx4jas"]
 
 [ext_resource type="Script" path="res://control.gd" id="1_5r28b"]
 [ext_resource type="Texture2D" uid="uid://bi1qnnmpjxy1p" path="res://images/Dirt_01.png" id="1_lxj4y"]
@@ -6,7 +6,6 @@
 [ext_resource type="Theme" uid="uid://chs40oebbe8ed" path="res://fonts/font_theme.tres" id="3_6j8ym"]
 [ext_resource type="FontFile" uid="uid://do7xr3jv0ldym" path="res://fonts/RandomFont3.ttf" id="4_etwrn"]
 [ext_resource type="Texture2D" uid="uid://dg46lox8kpaya" path="res://images/descarga.png" id="5_uwfv4"]
-[ext_resource type="AudioStream" uid="uid://8rx8ocbkhcuq" path="res://sounds/mouse click.mp3" id="7_nsb3f"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_wraa8"]
 font = ExtResource("4_etwrn")
@@ -101,9 +100,6 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("2_3hrc8")
 text = "EXIT"
-
-[node name="ButtonSound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("7_nsb3f")
 
 [connection signal="pressed" from="Button_play" to="." method="_on_button_play_pressed"]
 [connection signal="pressed" from="Button_options" to="." method="_on_button_options_pressed"]
